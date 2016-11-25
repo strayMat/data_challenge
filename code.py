@@ -30,8 +30,8 @@ print (data.head())
 
 #binary_data = data[np.logical_or(data['Cover_Type'] == 1,data['Cover_Type'] == 2)] # two-class classification set
 X = data.drop('N_Call', axis=1)
-X = X.drop('DAY_WE_DS', axis=1)
-X = X.drop('ASS_ASSIGNMENT', axis=1).values
+#X = X.drop('DAY_WE_DS', axis=1)
+X = X.drop('DATE', axis=1).values
 
 y = data['N_Call'].values
 print (np.unique(y))

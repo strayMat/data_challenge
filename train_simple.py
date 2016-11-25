@@ -22,20 +22,21 @@ print("loading data...")
 df = pd.read_csv(data_name, usecols = ['DATE','DAY_WE_DS','ASS_ASSIGNMENT'], sep = ";")
 #df = pd.read_csv(data_name,sep = ",")
 print("end loading\n")
-
+print(df.head())
 
 # In[201]:
 
 #conversion en format pandas date de la colonne date
 from datetime import datetime
+df['TIME_SLOT'] = df['DATE'].apply(lambda x:     intervalle(x))
 df["DATE"] = df["DATE"].apply(lambda x:     datetime.strptime(x,"%Y-%m-%d %H:%M:%S.%f"))
 
 df['TIME'] = df['DATE'].dt.time
 #df['short_DATE'] = df['DATE'].dt.date
-#df['DAY_NUM'] = df['DATE'].date.weekday()
-df['TIME_SLOT'] = df['TIME'].apply(lambda x: intervalle(x))
+df['DAY_NUM'] = df['DATE'].dt.weekday
 
-df = df.drop('DATE', axis=1)
+
+#df = df.drop('DATE', axis=1)
 df = df.drop('TIME', axis=1)
 df = df.drop('DAY_WE_DS', axis=1)
 df = df.drop('ASS_ASSIGNMENT', axis=1)

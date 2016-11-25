@@ -11,9 +11,9 @@ def assignementNumber(X):
 
 def intervalle(X):
     i = 0
-    a = ord(X[0])-48
-    b = ord(X[1])-48
-    c = ord(X[3])-48
+    a = ord(X[11])-48
+    b = ord(X[12])-48
+    c = ord(X[14])-48
     i+=a*2*10
     i+=b*2
     if c>0:
@@ -44,4 +44,4 @@ def jour(X):
     
 
 print(jour("2012-03-01"))
-print(intervalle("05:30:00"))
+#print(intervalle("05:30:00"))
