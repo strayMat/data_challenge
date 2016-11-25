@@ -44,3 +44,4 @@ def jour(X):
     
 
 print(jour("2012-03-01"))
+print(intervalle("05:30:00"))

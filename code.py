@@ -29,7 +29,10 @@ print (data.head())
 ### Prepare input to scikit and train and test cut
 
 #binary_data = data[np.logical_or(data['Cover_Type'] == 1,data['Cover_Type'] == 2)] # two-class classification set
-X = data.drop('N_Call', axis=1).values
+X = data.drop('N_Call', axis=1)
+X = X.drop('DAY_WE_DS', axis=1)
+X = X.drop('ASS_ASSIGNMENT', axis=1).values
+
 y = data['N_Call'].values
 print (np.unique(y))
 #y = 2 * y - 3 # converting labels from [1,2] to [-1,1]
