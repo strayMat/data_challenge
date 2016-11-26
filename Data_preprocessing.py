@@ -82,7 +82,7 @@ df2['N_Call'] = df2['N_Call'].groupby(df['DATE']).transform('sum')
 print(df2.head())
 
 print("ecriture du fichier sortie")
-df2.to_csv('train.csv', sep =';')
+df2.to_csv('train.csv', sep =';', index = False)
 print("end!")
 
 
