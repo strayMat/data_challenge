@@ -31,14 +31,16 @@ print("loading real data...")
 data = pd.read_csv(data_name, usecols = ['DAY_WE_DS','TIME_SLOT','ASS_ASSIGNMENT','N_Call'], sep = ";")
 #df = pd.read_csv(data_name,sep = ",")
 print("end loading\n")
-print(data[0:2])
+#print(data[0:2])
 
 
 # In[7]:
-
+print(data.head())
 Matrix = data[['DAY_WE_DS','TIME_SLOT','ASS_ASSIGNMENT']]
 Result = data[['N_Call']]
 
+print(Matrix.head())
+print(Result.head())
 
 # In[8]:
 
@@ -49,8 +51,8 @@ clf = clf.fit(Matrix, Result)
 
 # In[9]:
 
-print(df.head())
-print (len(df))
+#print(df.head())
+#print (len(df))
 
 for i in range (len(df)):
     line = df.values[i,:]
@@ -58,10 +60,16 @@ for i in range (len(df)):
     #print(date_str)
     date = datetime.strptime(date_str,"%Y-%m-%d %H:%M:%S.%f")
     weekday = date.weekday()
-    print(weekday)
+    #print(weekday)
     time_slot = chor.intervalle(date_str)
     Nb_ass = chor.centre(line[2])
-    df.values[i,3] = clf.predict([[weekday, time_slot, Nb_ass]])
+    #print(Nb_ass)
+    
+    df[i,3] = clf.predict([[weekday, time_slot, Nb_ass]])[0]
+    #print(type(clf.predict([[weekday, time_slot, Nb_ass]])[0]))
+    #print(df[i,3])
+
+    print (i)
     
 print("ecriture du fichier sortie")
 df.to_csv('sortie.csv', sep =';', index = False)
