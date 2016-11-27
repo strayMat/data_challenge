@@ -20,7 +20,7 @@ data_name = "train.csv"
 
 
 print("loading data...")
-df = pd.read_csv(data_name, usecols = ['DAY_NUM','TIME_SLOT','ASS_ASSIGNMENT','N_Call'], sep = ",")
+df = pd.read_csv(data_name, usecols = ['DAY_WE_DS','TIME_SLOT','ASS_ASSIGNMENT','N_Call'], sep = ";")
 #df = pd.read_csv(data_name,sep = ",")
 print("end loading\n")
 print(df[0:2])
@@ -28,7 +28,7 @@ print(df[0:2])
 
 # In[7]:
 
-Matrix = df[['DAY_NUM','TIME_SLOT','ASS_ASSIGNMENT']]
+Matrix = df[['DAY_WE_DS','TIME_SLOT','ASS_ASSIGNMENT']]
 Result = df[['N_Call']]
 
 
