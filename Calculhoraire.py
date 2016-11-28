@@ -45,7 +45,7 @@ def centre(X):
     return -1 #autre cas randoms si ça foire
 
 def inverseCentre(X):
-	if(X==0): return "CAT"
+    if(X==0): return "CAT"
     if(X==1): return "CMS"
     if(X==2): return "Crises"
     if(X==3): return "Domicile"
@@ -98,4 +98,5 @@ def jour(X):
     return ((start+decalage) % 7)
     
 
-#print(jour("2012-03-01"))
+#print(inverseCentre(27))
+
