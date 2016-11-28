@@ -44,6 +44,37 @@ def centre(X):
     if(X=="Téléphonie"): return 27
     return -1 #autre cas randoms si ça foire
 
+def inverseCentre(X):
+	if(X==0): return "CAT"
+    if(X==1): return "CMS"
+    if(X==2): return "Crises"
+    if(X==3): return "Domicile"
+    if(X==4): return "Evenements"
+    if(X==5): return "Gestion"
+    if(X==6): return "Gestion Amex"
+    if(X==7): return "Gestion Clients"
+    if(X==8): return "Gestion DZ"
+    if(X==9): return "Gestion - Accueil Telephonique"
+    if(X==10): return "Gestion Assurances"
+    if(X==11): return "Gestion Relation Clienteles"
+    if(X==12): return "Gestion Renault"
+    if(X==13): return "Japon"
+    if(X==14): return "Manager"
+    if(X==15): return "Mécanicien"
+    if(X==16): return "Médical"
+    if(X==17): return "Nuit"
+    if(X==18): return "RENAULT"
+    if(X==19): return "Prestataires"
+    if(X==20): return "RTC"
+    if(X==21): return "Regulation Medicale"
+    if(X==22): return "SAP"
+    if(X==23): return "Services"
+    if(X==24): return "Tech. Axa"
+    if(X==25): return "Tech. Inter"
+    if(X==26): return "Tech. Total"
+    if(X==27): return "Téléphonie"
+    return -1 #autre cas randoms si ça foire
+
 def jour(X):
     #Date format AAAA-MM-JJ
     start = 6 #1 janvier 2011 = Samedi 6 ème jour semaine
