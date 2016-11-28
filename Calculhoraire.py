@@ -42,7 +42,7 @@ def centre(X):
     if(X=="Tech. Inter"): return 25
     if(X=="Tech. Total"): return 26
     if(X=="Téléphonie"): return 27
-    return 18 #autre cas randoms si ça foire
+    return -1 #autre cas randoms si ça foire
 
 def jour(X):
     #Date format AAAA-MM-JJ
@@ -67,4 +67,4 @@ def jour(X):
     return ((start+decalage) % 7)
     
 
-print(jour("2012-03-01"))
+#print(jour("2012-03-01"))
