@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Nov 25 14:49:03 2016
-
 @author: etienne
 """
 #import pandas as pd
@@ -15,25 +14,35 @@ def intervalle(X):
    
    
 def centre(X):
-    if(X=="CMS"): return 0
-    if(X=="Crises"): return 1
-    if(X=="Domicile"): return 2
-    if(X=="Gestion"): return 3
-    if(X=="Gestion - Accueil Telephonique"): return 4
-    if(X=="Gestion Assurances"): return 5
-    if(X=="Gestion Relation Clienteles"): return 6
-    if(X=="Gestion Renault"): return 7
-    if(X=="Japon"): return 8
-    if(X=="Médical"): return 9
-    if(X=="Nuit"): return 10
-    if(X=="RENAULT"): return 11
-    if(X=="Regulation Medicale"): return 12
-    if(X=="SAP"): return 13
-    if(X=="Services"): return 14
-    if(X=="Tech. Axa"): return 15
-    if(X=="Tech. Inter"): return 16
-    if(X=="Téléphonie"): return 17
-    return 18 #autre cas randoms si ça foire
+    if(X=="CAT"): return 0
+    if(X=="CMS"): return 1
+    if(X=="Crises"): return 2
+    if(X=="Domicile"): return 3
+    if(X=="Evenements"): return 4
+    if(X=="Gestion"): return 5
+    if(X=="Gestion Amex"): return 6
+    if(X=="Gestion Clients"): return 7
+    if(X=="Gestion DZ"): return 8
+    if(X=="Gestion - Accueil Telephonique"): return 9
+    if(X=="Gestion Assurances"): return 10
+    if(X=="Gestion Relation Clienteles"): return 11
+    if(X=="Gestion Renault"): return 12
+    if(X=="Japon"): return 13
+    if(X=="Manager"): return 14
+    if(X=="Mécanicien"): return 15
+    if(X=="Médical"): return 16
+    if(X=="Nuit"): return 17
+    if(X=="RENAULT"): return 18
+    if(X=="Prestataires"): return 19
+    if(X=="RTC"): return 20
+    if(X=="Regulation Medicale"): return 21
+    if(X=="SAP"): return 22
+    if(X=="Services"): return 23
+    if(X=="Tech. Axa"): return 24
+    if(X=="Tech. Inter"): return 25
+    if(X=="Tech. Total"): return 26
+    if(X=="Téléphonie"): return 27
+    return -1 #autre cas randoms si ça foire
 
 def jour(X):
     #Date format AAAA-MM-JJ
@@ -58,4 +67,4 @@ def jour(X):
     return ((start+decalage) % 7)
     
 
-print(jour("2012-03-01"))
+#print(jour("2012-03-01"))
