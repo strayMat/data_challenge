@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 from datetime import datetime
 import pandas as pd
@@ -53,19 +53,20 @@ for i in assign:
     clf[i].fit(Matrix, Result)
 
 
-# In[ ]:
+# In[5]:
 
 dsub = pd.read_csv('submission.txt', sep = "\t")
 print(dsub.head())
 print("convert to timestamp...")
 dsub["DATE"] = dsub["DATE"].apply(lambda x:     datetime.strptime(x,"%Y-%m-%d %H:%M:%S.%f"))
+dsub["short_DATE"] = dsub["DATE"].apply(lambda x:     datetime.strftime(x,"%Y-%m-%d"))
+dsub['HO'] = dsub['short_DATE'].apply(lambda x: holidays(x))
 print("End of conversion!")
 
 
 dsub['DAY_WE_DS'] = dsub['DATE'].dt.weekday
 dsub['DAY'] = dsub['DATE'].dt.day
 dsub['MONTH'] = dsub['DATE'].dt.month
-dsub['HO'] = dsub['DATE'].apply(lambda x: holidays(x))
 dsub['YEAR'] = dsub['DATE'].dt.year
 dsub['TIME_SLOT'] =dsub['DATE'].apply(lambda x: intervalle(x))
 
